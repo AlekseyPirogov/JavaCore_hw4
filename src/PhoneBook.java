@@ -1,3 +1,8 @@
+// Дисциплина: Java Core для тестировщиков
+// Домашнее задание №4 "ArrayList"
+// Студент: Алексей Пирогов
+// Дата: 28.02.2022
+
 import java.util.ArrayList;
 
 public class PhoneBook {
@@ -36,9 +41,7 @@ public class PhoneBook {
 
     public static void getPhone(String strToSearch, ArrayList<PhoneBook> phoneBooks) {
         for (int i = 0; i < phoneBooks.toArray().length; i++)
-            if (strToSearch == phoneBooks.get(i).getSurname())
+            if (phoneBooks.get(i).getSurname().equals(strToSearch))
                 System.out.println(phoneBooks.get(i));
-        return;
     }
-
 }
