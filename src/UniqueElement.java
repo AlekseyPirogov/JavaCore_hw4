@@ -1,3 +1,7 @@
+// Дисциплина: Java Core для тестировщиков
+// Домашнее задание №4 "ArrayList"
+// Студент: Алексей Пирогов
+// Дата: 28.02.2022
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +17,7 @@ public class UniqueElement {
     // Параметризованынй конструктор класса для создания уникальной записи
     public UniqueElement(String name, int count){
         this.uniqueNname = name;
-        this.counterRepeat = (Integer)count;
+        this.counterRepeat = count;
     }
 
     // Набор из геттера и сеттера для работы со счётчиком количества ункальных записей
@@ -29,7 +33,7 @@ public class UniqueElement {
 
     @Override
     public String toString() {
-        return "UniqueElement {" +
+        return "UniqueElement{" +
                 "uniqueNname='" + uniqueNname + '\'' +
                 ", counterRepeat=" + counterRepeat +
                 '}';

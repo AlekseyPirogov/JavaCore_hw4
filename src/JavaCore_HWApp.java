@@ -1,3 +1,7 @@
+// Дисциплина: Java Core для тестировщиков
+// Домашнее задание №4 "ArrayList"
+// Студент: Алексей Пирогов
+// Дата: 28.02.2022
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +23,7 @@ public class JavaCore_HWApp {
     public static void main(String[] args) {
 
         System.out.println("Задание 1. Пример работы с ArrayList: ");
-        ArrayList<String> arrayList = new ArrayList<>();    // Массив ArrayList класса на 10 элементов
+        ArrayList<String> arrayList; // Массив ArrayList
         // Наполнение массива данными с использование контруктора класса
         arrayList = new ArrayList<>(Arrays.asList("Москва", "Вашингтон", "Париж", "Вена", "Прага", "Берлин", "Лондон", "Пекин", "Токио", "Дели"));
 
@@ -40,7 +44,10 @@ public class JavaCore_HWApp {
         arrayList.add("Варшава");
 
         // Вывод информации об исходном массиве
-        System.out.println(" - размер массива \"arrayList\" с исходными данными: " + arrayList.toArray().length + ". Состав:\n" + arrayList.toString() + "\n");
+        System.out.println(" - размер массива \"arrayList\" с исходными данными: " + arrayList.toArray().length + ". Состав:\n"); //+ arrayList.toString() + "\n");
+
+        for (int i = 0; i < arrayList.toArray().length; i++)
+            System.out.print(arrayList.get(i) + ", ");
 
         // Объявление массива с уникальными элементами (с параметром UniqueElement)
         ArrayList<UniqueElement> arrayListWithUniqueElement = new ArrayList<>(arrayList.toArray().length);
@@ -57,7 +64,7 @@ public class JavaCore_HWApp {
             // Цикл для сравнения найденной ранее уникальной записи с последующими элементами исходного масива
             for (int j = i + 1; j < arrayList.toArray().length; j++) {
                 // Если i-й и j-й элементы равны, то увеличение счётчика количества уникальных элементов:
-                if (arrayList.get(i) == arrayList.get(j)) {
+                if (arrayList.get(i).equals(arrayList.get(j))) {
                     counterUniqueElement++;                             // увеличение значения счётчика
                     uniqueElement.setCount(counterUniqueElement);       // запись информации уникального значения в обект типа uniqueElement
                     arrayListWithUniqueElement.set(i,uniqueElement);    // добавление к массиву с уникальными заначениями соответствующей записи
@@ -70,7 +77,7 @@ public class JavaCore_HWApp {
         }
 
         // Вывод информации об массиве с уникальными данными:
-        System.out.println(" - размер массива \"arrayListWithUniqueElement\" с уникальными элементами: " + arrayListWithUniqueElement.toArray().length + ". Состав:");
+        System.out.println("\n\n - размер массива \"arrayListWithUniqueElement\" с уникальными элементами: " + arrayListWithUniqueElement.toArray().length + ". Состав:");
         for (int i = 0; i < arrayListWithUniqueElement.toArray().length; i++)
             System.out.println(arrayListWithUniqueElement.get(i).toString());
 
